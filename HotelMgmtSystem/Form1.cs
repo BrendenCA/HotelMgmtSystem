@@ -7,14 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace HotelMgmtSystem
 {
-    public partial class Form1 : Form
+    public partial class loginPage : Form
     {
-        public Form1()
+        public loginPage()
         {
             InitializeComponent();
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            dbconnect dbms = new dbconnect();
+            dbms.connect();
+            OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
+            cmd.Parameters.Add("p1", user.Text);
+            cmd.Parameters.Add("p2", pass.Text);
+            OracleDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            if (reader["COUNT(*)"].ToString() == "1")
+            {
+                cmd = new OracleCommand("SELECT USERID, ROLE FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
+                cmd.Parameters.Add("p1", user.Text);
+                cmd.Parameters.Add("p2", pass.Text);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                globalVar.userid = reader["USERID"].ToString();
+                globalVar.role = reader["ROLE"].ToString();
+                MessageBox.Show(globalVar.userid + " login sucessful as " + globalVar.role);
+            }
+            else
+                MessageBox.Show("Username/Password invalid");
         }
     }
 }
