@@ -38,7 +38,7 @@ namespace HotelMgmtSystem
                 globalVar.loginStatus = true;
                 globalVar.userid = reader["USERID"].ToString();
                 globalVar.role = reader["ROLE"].ToString();
-                MessageBox.Show("User " + globalVar.userid + " logged in as " + globalVar.role);
+                MessageBox.Show("User " + globalVar.userid + " logged in as " + globalVar.role, "Success");
                 this.Close();
             }
             else

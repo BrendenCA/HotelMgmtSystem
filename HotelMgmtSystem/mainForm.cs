@@ -29,5 +29,10 @@ namespace HotelMgmtSystem
             customerForm newForm = new customerForm();
             newForm.Show();
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
