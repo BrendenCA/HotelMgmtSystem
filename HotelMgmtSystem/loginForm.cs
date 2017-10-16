@@ -12,9 +12,9 @@ using Oracle.ManagedDataAccess.Types;
 
 namespace HotelMgmtSystem
 {
-    public partial class loginPage : Form
+    public partial class loginForm : Form
     {
-        public loginPage()
+        public loginForm()
         {
             InitializeComponent();
         }
@@ -35,9 +35,11 @@ namespace HotelMgmtSystem
                 cmd.Parameters.Add("p2", pass.Text);
                 reader = cmd.ExecuteReader();
                 reader.Read();
+                globalVar.loginStatus = true;
                 globalVar.userid = reader["USERID"].ToString();
                 globalVar.role = reader["ROLE"].ToString();
-                MessageBox.Show(globalVar.userid + " login sucessful as " + globalVar.role);
+                MessageBox.Show("User " + globalVar.userid + " logged in as " + globalVar.role);
+                this.Close();
             }
             else
                 MessageBox.Show("Username/Password invalid");

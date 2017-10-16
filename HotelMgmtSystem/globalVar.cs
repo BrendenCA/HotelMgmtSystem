@@ -10,5 +10,6 @@ namespace HotelMgmtSystem
     {
         public static string userid;
         public static string role;
+        public static bool loginStatus;
     }
 }

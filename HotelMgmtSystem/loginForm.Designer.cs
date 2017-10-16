@@ -1,6 +1,6 @@
 ﻿namespace HotelMgmtSystem
 {
-    partial class loginPage
+    partial class loginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
-            // loginPage
+            // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +87,7 @@
             this.Controls.Add(this.user);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
-            this.Name = "loginPage";
+            this.Name = "loginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
