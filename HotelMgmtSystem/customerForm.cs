@@ -28,5 +28,17 @@ namespace HotelMgmtSystem
             else
                 addCustomers.Instance.BringToFront();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(modifyCustomers.Instance))
+            {
+                panel.Controls.Add(modifyCustomers.Instance);
+                modifyCustomers.Instance.Dock = DockStyle.Fill;
+                modifyCustomers.Instance.BringToFront();
+            }
+            else
+                modifyCustomers.Instance.BringToFront();
+        }
     }
 }

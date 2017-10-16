@@ -101,6 +101,12 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modifyCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="modifyCustomers.Designer.cs">
+      <DependentUpon>modifyCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="addCustomers.resx">
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifyCustomers.resx">
+      <DependentUpon>modifyCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
