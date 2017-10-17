@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.welcomeText = new System.Windows.Forms.Label();
+            this.roleText = new System.Windows.Forms.Label();
             this.btnCustomers = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnReservations = new System.Windows.Forms.Button();
+            this.btnInvoices = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
+            this.btnRooms = new System.Windows.Forms.Button();
+            this.btnEmployees = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // welcomeText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome <user>";
+            this.welcomeText.AutoSize = true;
+            this.welcomeText.Location = new System.Drawing.Point(12, 9);
+            this.welcomeText.Name = "welcomeText";
+            this.welcomeText.Size = new System.Drawing.Size(87, 13);
+            this.welcomeText.TabIndex = 0;
+            this.welcomeText.Text = "Welcome <user>";
             // 
-            // label2
+            // roleText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Role: <role>";
+            this.roleText.AutoSize = true;
+            this.roleText.Location = new System.Drawing.Point(153, 9);
+            this.roleText.Name = "roleText";
+            this.roleText.Size = new System.Drawing.Size(64, 13);
+            this.roleText.TabIndex = 1;
+            this.roleText.Text = "Role: <role>";
             // 
             // btnCustomers
             // 
@@ -69,59 +69,59 @@
             this.btnCustomers.UseVisualStyleBackColor = true;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
-            // button2
+            // btnReservations
             // 
-            this.button2.Location = new System.Drawing.Point(66, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reservations";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReservations.Location = new System.Drawing.Point(66, 88);
+            this.btnReservations.Name = "btnReservations";
+            this.btnReservations.Size = new System.Drawing.Size(100, 23);
+            this.btnReservations.TabIndex = 3;
+            this.btnReservations.Text = "Reservations";
+            this.btnReservations.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnInvoices
             // 
-            this.button3.Location = new System.Drawing.Point(66, 175);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Invoices";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnInvoices.Location = new System.Drawing.Point(66, 175);
+            this.btnInvoices.Name = "btnInvoices";
+            this.btnInvoices.Size = new System.Drawing.Size(100, 23);
+            this.btnInvoices.TabIndex = 4;
+            this.btnInvoices.Text = "Invoices";
+            this.btnInvoices.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnOrders
             // 
-            this.button4.Location = new System.Drawing.Point(66, 146);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Orders";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnOrders.Location = new System.Drawing.Point(66, 146);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(100, 23);
+            this.btnOrders.TabIndex = 5;
+            this.btnOrders.Text = "Orders";
+            this.btnOrders.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnRooms
             // 
-            this.button5.Location = new System.Drawing.Point(66, 117);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Rooms";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRooms.Location = new System.Drawing.Point(66, 117);
+            this.btnRooms.Name = "btnRooms";
+            this.btnRooms.Size = new System.Drawing.Size(100, 23);
+            this.btnRooms.TabIndex = 6;
+            this.btnRooms.Text = "Rooms";
+            this.btnRooms.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnEmployees
             // 
-            this.button6.Location = new System.Drawing.Point(66, 204);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Employees";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEmployees.Location = new System.Drawing.Point(66, 204);
+            this.btnEmployees.Name = "btnEmployees";
+            this.btnEmployees.Size = new System.Drawing.Size(100, 23);
+            this.btnEmployees.TabIndex = 7;
+            this.btnEmployees.Text = "Employees";
+            this.btnEmployees.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnStats
             // 
-            this.button7.Location = new System.Drawing.Point(66, 233);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "View Stats";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnStats.Location = new System.Drawing.Point(66, 233);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(100, 23);
+            this.btnStats.TabIndex = 8;
+            this.btnStats.Text = "View Stats";
+            this.btnStats.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -150,15 +150,15 @@
             this.ClientSize = new System.Drawing.Size(229, 295);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnStats);
+            this.Controls.Add(this.btnEmployees);
+            this.Controls.Add(this.btnRooms);
+            this.Controls.Add(this.btnOrders);
+            this.Controls.Add(this.btnInvoices);
+            this.Controls.Add(this.btnReservations);
             this.Controls.Add(this.btnCustomers);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.roleText);
+            this.Controls.Add(this.welcomeText);
             this.Name = "mainForm";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.mainForm_Load);
@@ -169,15 +169,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label welcomeText;
+        private System.Windows.Forms.Label roleText;
         private System.Windows.Forms.Button btnCustomers;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnReservations;
+        private System.Windows.Forms.Button btnInvoices;
+        private System.Windows.Forms.Button btnOrders;
+        private System.Windows.Forms.Button btnRooms;
+        private System.Windows.Forms.Button btnEmployees;
+        private System.Windows.Forms.Button btnStats;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnQuit;
     }

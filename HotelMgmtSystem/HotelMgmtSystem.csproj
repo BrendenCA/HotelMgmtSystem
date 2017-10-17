@@ -70,16 +70,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addCustomers.cs">
+    <Compile Include="Customer\addCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="addCustomers.Designer.cs">
+    <Compile Include="Customer\addCustomers.Designer.cs">
       <DependentUpon>addCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="customerForm.cs">
+    <Compile Include="Customer\customerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="customerForm.Designer.cs">
+    <Compile Include="Customer\customerForm.Designer.cs">
       <DependentUpon>customerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dbconnect.cs" />
@@ -101,18 +101,18 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modifyCustomers.cs">
+    <Compile Include="Customer\modifyCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="modifyCustomers.Designer.cs">
+    <Compile Include="Customer\modifyCustomers.Designer.cs">
       <DependentUpon>modifyCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="addCustomers.resx">
+    <EmbeddedResource Include="Customer\addCustomers.resx">
       <DependentUpon>addCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customerForm.resx">
+    <EmbeddedResource Include="Customer\customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
@@ -121,7 +121,7 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modifyCustomers.resx">
+    <EmbeddedResource Include="Customer\modifyCustomers.resx">
       <DependentUpon>modifyCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,6 +133,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="HotelMS.xsc">
       <DependentUpon>HotelMS.xsd</DependentUpon>
     </None>

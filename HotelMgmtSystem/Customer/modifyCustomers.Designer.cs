@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.dob = new System.Windows.Forms.DateTimePicker();
             this.email = new System.Windows.Forms.TextBox();
             this.aadharNo = new System.Windows.Forms.TextBox();
@@ -43,19 +43,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.custId = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Location = new System.Drawing.Point(333, 201);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(333, 201);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 25;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // dob
             // 
@@ -171,15 +171,15 @@
             this.custId.TabIndex = 27;
             this.custId.TextChanged += new System.EventHandler(this.custId_TextChanged);
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.Location = new System.Drawing.Point(232, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSearch.Location = new System.Drawing.Point(232, 7);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 28;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel
             // 
@@ -193,10 +193,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.custId);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.dob);
             this.Controls.Add(this.email);
             this.Controls.Add(this.aadharNo);
@@ -218,7 +218,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DateTimePicker dob;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox aadharNo;
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox custId;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel;
     }
 }

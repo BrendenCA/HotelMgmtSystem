@@ -19,9 +19,8 @@ namespace HotelMgmtSystem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            label1.Text = "Welcome " + globalVar.userid;
-            label2.Text = "Role: " + globalVar.role;
-
+            welcomeText.Text = "Welcome " + globalVar.userid;
+            roleText.Text = "Role: " + globalVar.role;
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)

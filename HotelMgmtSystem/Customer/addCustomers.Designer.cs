@@ -40,7 +40,7 @@
             this.aadharNo = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.dob = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -140,21 +140,21 @@
             this.dob.Size = new System.Drawing.Size(134, 20);
             this.dob.TabIndex = 11;
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.Location = new System.Drawing.Point(333, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(333, 183);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 12;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // addCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.dob);
             this.Controls.Add(this.email);
             this.Controls.Add(this.aadharNo);
@@ -188,6 +188,6 @@
         private System.Windows.Forms.TextBox aadharNo;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.DateTimePicker dob;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

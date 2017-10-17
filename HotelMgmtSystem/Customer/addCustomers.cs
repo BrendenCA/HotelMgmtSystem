@@ -18,7 +18,7 @@ namespace HotelMgmtSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
             dbms.connect();
