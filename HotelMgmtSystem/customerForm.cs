@@ -17,28 +17,24 @@ namespace HotelMgmtSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(!panel.Controls.Contains(addCustomers.Instance))
-            {
-                panel.Controls.Add(addCustomers.Instance);
-                addCustomers.Instance.Dock = DockStyle.Fill;
-                addCustomers.Instance.BringToFront();
-            }
-            else
-                addCustomers.Instance.BringToFront();
+            this.Size = new Size(517, 300);
+            panel.Controls.Clear();
+            addCustomers uc = new addCustomers();
+            panel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+            uc.BringToFront();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModify_Click(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(modifyCustomers.Instance))
-            {
-                panel.Controls.Add(modifyCustomers.Instance);
-                modifyCustomers.Instance.Dock = DockStyle.Fill;
-                modifyCustomers.Instance.BringToFront();
-            }
-            else
-                modifyCustomers.Instance.BringToFront();
+            this.Size = new Size(517, 300);
+            panel.Controls.Clear();
+            modifyCustomers uc = new modifyCustomers();
+            panel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+            uc.BringToFront();
         }
     }
 }

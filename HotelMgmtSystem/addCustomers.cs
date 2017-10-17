@@ -13,16 +13,6 @@ namespace HotelMgmtSystem
 {
     public partial class addCustomers : UserControl
     {
-        private static addCustomers _instance;
-        public static addCustomers Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new addCustomers();
-                return _instance;
-            }
-        }
         public addCustomers()
         {
             InitializeComponent();
