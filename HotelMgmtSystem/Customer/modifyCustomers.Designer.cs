@@ -169,7 +169,6 @@
             this.custId.Name = "custId";
             this.custId.Size = new System.Drawing.Size(134, 20);
             this.custId.TabIndex = 27;
-            this.custId.TextChanged += new System.EventHandler(this.custId_TextChanged);
             // 
             // btnSearch
             // 

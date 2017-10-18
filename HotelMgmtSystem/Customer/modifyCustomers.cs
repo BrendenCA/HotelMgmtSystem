@@ -28,6 +28,8 @@ namespace HotelMgmtSystem
             if (reader.Read())
             {
                 panel.Visible = false;
+                custId.Enabled = false;
+                btnSearch.Enabled = false;
                 name.Text = reader["NAME"].ToString();
                 address.Text = reader["ADDRESS"].ToString();
                 dob.Text = reader["DATE_OF_BIRTH"].ToString();
@@ -40,11 +42,6 @@ namespace HotelMgmtSystem
                 MessageBox.Show("Customer ID not found", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-
-        private void custId_TextChanged(object sender, EventArgs e)
-        {
-            panel.Visible = true;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

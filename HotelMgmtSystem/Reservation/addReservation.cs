@@ -30,17 +30,14 @@ namespace HotelMgmtSystem
             if (reader["COUNT(*)"].ToString() == "1")
             {
                 panel.Visible = false;
+                custId.Enabled = false;
+                btnSearch.Enabled = false;
             }
             else
             {
                 MessageBox.Show("Customer ID not found", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-
-        private void custId_TextChanged(object sender, EventArgs e)
-        {
-            panel.Visible = true;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -62,11 +59,18 @@ namespace HotelMgmtSystem
                 btnChoose.Enabled = true;
                 return;
             }
+            if(!checkAvailability())
+            {
+                MessageBox.Show("Room type not available on selected days", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnChoose.Text = "Choose";
+                btnChoose.Enabled = true;
+                return;
+            }
             dbconnect dbms = new dbconnect();
             dbms.connect();
             OracleCommand cmd = new OracleCommand("INSERT INTO RESERVATION (NO_OF_GUESTS, CHECK_IN, CHECK_OUT, CUST_ID, ROOM_TYPE) VALUES (:p1, :p2, :p3, :p4, :p5)", dbms.con);
             cmd.Parameters.Add("p1", noOfGuests.Text);
-            cmd.Parameters.Add("p2", checkInDate.Text);
+            cmd.Parameters.Add("p2", checkInDate.Value.Date);
             cmd.Parameters.Add("p3", checkOutDate.Value.Date);
             cmd.Parameters.Add("p4", custId.Text);
             cmd.Parameters.Add("p5", btnChoose.Text);
@@ -89,6 +93,34 @@ namespace HotelMgmtSystem
             btnChoose.Text = newForm.roomChoiceId;
             btnChoose.Enabled = false;
             roomSize = Convert.ToInt32(newForm.roomBeds);
+        }
+
+        private bool checkAvailability()
+        {
+            int booked;
+            int total;
+            dbconnect dbms = new dbconnect();
+            dbms.connect();
+            OracleCommand cmd = new OracleCommand("SELECT TOTAL_ROOMS FROM ROOM_TYPE WHERE ROOM_TYPE=:p1", dbms.con);
+            cmd.Parameters.Add("p1", btnChoose.Text);
+            OracleDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            total = Convert.ToInt32(reader["TOTAL_ROOMS"].ToString());
+
+            for(DateTime date = checkInDate.Value; date<=checkOutDate.Value; date = date.AddDays(1))
+            {
+                cmd = new OracleCommand("SELECT COUNT(*) FROM RESERVATION WHERE ROOM_TYPE=:p1 AND CHECK_IN<=:p2 AND CHECK_OUT>=:p2", dbms.con);
+                cmd.Parameters.Add("p1", btnChoose.Text);
+                cmd.Parameters.Add("p2", date.Date);
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                booked = Convert.ToInt32(reader["COUNT(*)"].ToString());
+                if ((total - booked) <= 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

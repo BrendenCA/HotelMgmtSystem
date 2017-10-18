@@ -78,7 +78,6 @@
             this.custId.Name = "custId";
             this.custId.Size = new System.Drawing.Size(120, 20);
             this.custId.TabIndex = 3;
-            this.custId.TextChanged += new System.EventHandler(this.custId_TextChanged);
             // 
             // label3
             // 
@@ -107,6 +106,7 @@
             // 
             // checkOutDate
             // 
+            this.checkOutDate.Checked = false;
             this.checkOutDate.Location = new System.Drawing.Point(97, 107);
             this.checkOutDate.Name = "checkOutDate";
             this.checkOutDate.Size = new System.Drawing.Size(121, 20);
@@ -115,9 +115,19 @@
             // noOfGuests
             // 
             this.noOfGuests.Location = new System.Drawing.Point(97, 133);
+            this.noOfGuests.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.noOfGuests.Name = "noOfGuests";
             this.noOfGuests.Size = new System.Drawing.Size(120, 20);
             this.noOfGuests.TabIndex = 8;
+            this.noOfGuests.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnSubmit
             // 
