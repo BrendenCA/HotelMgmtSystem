@@ -90,11 +90,6 @@
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="globalVar.cs" />
-    <Compile Include="HotelMS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HotelMS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,17 +129,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
-    <None Include="HotelMS.xsc">
-      <DependentUpon>HotelMS.xsd</DependentUpon>
-    </None>
-    <None Include="HotelMS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HotelMS.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HotelMS.xss">
-      <DependentUpon>HotelMS.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
