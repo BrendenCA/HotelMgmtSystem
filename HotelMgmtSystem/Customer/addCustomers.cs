@@ -21,7 +21,6 @@ namespace HotelMgmtSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("INSERT INTO CUSTOMER (NAME, ADDRESS, DATE_OF_BIRTH, AADHAR_NO, MOBILE_NO, EMAIL_ID) VALUES (:p1, :p2, :p3, :p4, :p5, :p6)", dbms.con);
             cmd.Parameters.Add("p1", name.Text);
             cmd.Parameters.Add("p2", address.Text);

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using System.Windows.Forms;
 
 namespace HotelMgmtSystem
 {
     class dbconnect
     {
         public OracleConnection con;
-        public void connect()
+        public dbconnect()
         {
             con = new OracleConnection("DATA SOURCE=oracle.kozow.com:1521/XE;PASSWORD=DBMS;USER ID=DBMS");
             try
@@ -19,9 +20,8 @@ namespace HotelMgmtSystem
             }
             catch (Exception e)
             {
-                throw e;        
+                MessageBox.Show("DB connection failed\n" + e.Message, "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
     }
 }

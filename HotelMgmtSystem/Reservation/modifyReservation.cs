@@ -23,7 +23,6 @@ namespace HotelMgmtSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT * FROM RESERVATION WHERE RESERVATION_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", resId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
@@ -83,7 +82,6 @@ namespace HotelMgmtSystem
                 return;
             }
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("UPDATE RESERVATION SET NO_OF_GUESTS= :p1, CHECK_IN= :p2, CHECK_OUT= :p3, ROOM_TYPE= :p4 WHERE RESERVATION_ID= :p5", dbms.con);
             cmd.Parameters.Add("p1", noOfGuests.Text);
             cmd.Parameters.Add("p2", checkInDate.Value.Date);
@@ -105,7 +103,6 @@ namespace HotelMgmtSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("DELETE FROM RESERVATION WHERE RESERVATION_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", resId.Text);
         }
@@ -115,7 +112,6 @@ namespace HotelMgmtSystem
             int booked;
             int total;
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT TOTAL_ROOMS FROM ROOM_TYPE WHERE ROOM_TYPE=:p1", dbms.con);
             cmd.Parameters.Add("p1", btnChoose.Text);
             OracleDataReader reader = cmd.ExecuteReader();

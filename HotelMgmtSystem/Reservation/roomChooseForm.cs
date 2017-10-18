@@ -24,7 +24,6 @@ namespace HotelMgmtSystem
         private void roomChooseForm_Load(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT ROOM_TYPE, ROOM_DESC, NO_OF_BEDS, PRICE FROM ROOM_TYPE", dbms.con);
             OracleDataReader reader = cmd.ExecuteReader();
             while(reader.Read())

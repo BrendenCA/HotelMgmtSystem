@@ -22,7 +22,6 @@ namespace HotelMgmtSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM CUSTOMER WHERE CUST_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", custId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
@@ -67,7 +66,6 @@ namespace HotelMgmtSystem
                 return;
             }
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("INSERT INTO RESERVATION (NO_OF_GUESTS, CHECK_IN, CHECK_OUT, CUST_ID, ROOM_TYPE) VALUES (:p1, :p2, :p3, :p4, :p5)", dbms.con);
             cmd.Parameters.Add("p1", noOfGuests.Text);
             cmd.Parameters.Add("p2", checkInDate.Value.Date);
@@ -103,7 +101,6 @@ namespace HotelMgmtSystem
             int booked;
             int total;
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT TOTAL_ROOMS FROM ROOM_TYPE WHERE ROOM_TYPE=:p1", dbms.con);
             cmd.Parameters.Add("p1", btnChoose.Text);
             OracleDataReader reader = cmd.ExecuteReader();

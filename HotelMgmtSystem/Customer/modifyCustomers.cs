@@ -21,7 +21,6 @@ namespace HotelMgmtSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("SELECT * FROM CUSTOMER WHERE CUST_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", custId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
@@ -47,7 +46,6 @@ namespace HotelMgmtSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
             OracleCommand cmd = new OracleCommand("UPDATE CUSTOMER SET NAME=:p1, ADDRESS=:p2, DATE_OF_BIRTH=:p3, AADHAR_NO=:p4, MOBILE_NO=:p5, EMAIL_ID=:p6 WHERE CUST_ID=:p7", dbms.con);
             cmd.Parameters.Add("p1", name.Text);
             cmd.Parameters.Add("p2", address.Text);
