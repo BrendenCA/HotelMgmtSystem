@@ -22,7 +22,15 @@ namespace HotelMgmtSystem
         private void Login_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            dbms.connect();
+            try
+            {
+                dbms.connect();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to connect to the DB\r\n" + "Error Message: \r\n" + ex.Message);
+            }
+            
             OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
             cmd.Parameters.Add("p1", user.Text);
             cmd.Parameters.Add("p2", pass.Text);

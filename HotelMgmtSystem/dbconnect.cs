@@ -13,7 +13,15 @@ namespace HotelMgmtSystem
         public void connect()
         {
             con = new OracleConnection("DATA SOURCE=oracle.kozow.com:1521/XE;PASSWORD=DBMS;USER ID=DBMS");
-            con.Open();
+            try
+            {
+                con.Open();
+            }
+            catch (Exception e)
+            {
+                throw e;        
+            }
+           
         }
     }
 }

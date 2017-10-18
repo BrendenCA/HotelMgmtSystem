@@ -38,7 +38,6 @@
             this.btnEmployees = new System.Windows.Forms.Button();
             this.btnStats = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // welcomeText
@@ -134,22 +133,11 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Manage";
             // 
-            // btnQuit
-            // 
-            this.btnQuit.Location = new System.Drawing.Point(66, 262);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(100, 23);
-            this.btnQuit.TabIndex = 10;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 295);
-            this.Controls.Add(this.btnQuit);
+            this.ClientSize = new System.Drawing.Size(229, 275);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnEmployees);
@@ -180,6 +168,5 @@
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnStats;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnQuit;
     }
 }

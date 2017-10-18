@@ -31,14 +31,10 @@ namespace HotelMgmtSystem
         
         private void btnReservations_Click(object sender, EventArgs e)
         {
-            
             reservationForm newForm = new reservationForm();
             newForm.Show();
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+
     }
 }
