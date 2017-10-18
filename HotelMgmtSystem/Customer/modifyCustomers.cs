@@ -59,7 +59,7 @@ namespace HotelMgmtSystem
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer modified successfully", "Success");
+                MessageBox.Show("Customer modified successfully ID:" + custId.Text, "Success");
                 ((Form)this.TopLevelControl).Close();
             }
             catch (Exception exp)

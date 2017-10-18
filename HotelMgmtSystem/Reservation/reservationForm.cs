@@ -17,11 +17,21 @@ namespace HotelMgmtSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             this.Size = new Size(350, 213);
             panel.Controls.Clear();
             addReservation uc = new addReservation();
+            panel.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+            uc.BringToFront();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(350, 213);
+            panel.Controls.Clear();
+            modifyReservation uc = new modifyReservation();
             panel.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
             uc.BringToFront();

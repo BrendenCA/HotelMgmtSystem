@@ -102,6 +102,12 @@
     <Compile Include="Customer\modifyCustomers.Designer.cs">
       <DependentUpon>modifyCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reservation\modifyReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reservation\modifyReservation.Designer.cs">
+      <DependentUpon>modifyReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation\addReservation.cs">
@@ -148,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="Reservation\addReservation.resx">
       <DependentUpon>addReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation\modifyReservation.resx">
+      <DependentUpon>modifyReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservation\reservationForm.resx">
       <DependentUpon>reservationForm.cs</DependentUpon>

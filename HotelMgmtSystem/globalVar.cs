@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
 
 namespace HotelMgmtSystem
 {
@@ -11,5 +12,6 @@ namespace HotelMgmtSystem
         public static string userid;
         public static string role;
         public static bool loginStatus;
+        
     }
 }

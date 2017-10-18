@@ -11,10 +11,11 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace HotelMgmtSystem
 {
-    public partial class addReservation : UserControl
+    public partial class modifyReservation : UserControl
     {
         private int roomSize;
-        public addReservation()
+
+        public modifyReservation()
         {
             InitializeComponent();
         }
@@ -23,21 +24,36 @@ namespace HotelMgmtSystem
         {
             dbconnect dbms = new dbconnect();
             dbms.connect();
-            OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM CUSTOMER WHERE CUST_ID=:p1", dbms.con);
-            cmd.Parameters.Add("p1", custId.Text);
+            OracleCommand cmd = new OracleCommand("SELECT * FROM RESERVATION WHERE RESERVATION_ID=:p1", dbms.con);
+            cmd.Parameters.Add("p1", resId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            if (reader["COUNT(*)"].ToString() == "1")
+            if (reader.Read())
             {
+                noOfGuests.Text = reader["NO_OF_GUESTS"].ToString();
+                checkInDate.Text = reader["CHECK_IN"].ToString();
+                checkOutDate.Text = reader["CHECK_OUT"].ToString();
+                if (checkInDate.Value.Date < DateTime.Now.Date)
+                {
+                    MessageBox.Show("Cannot modify", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 panel.Visible = false;
-                custId.Enabled = false;
+                resId.Enabled = false;
                 btnSearch.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Customer ID not found", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Reservation ID not found", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            roomChooseForm newForm = new roomChooseForm();
+            newForm.ShowDialog();
+            btnChoose.Text = newForm.roomChoiceId;
+            btnChoose.Enabled = false;
+            roomSize = Convert.ToInt32(newForm.roomBeds);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -59,7 +75,7 @@ namespace HotelMgmtSystem
                 btnChoose.Enabled = true;
                 return;
             }
-            if(!checkAvailability())
+            if (!checkAvailability())
             {
                 MessageBox.Show("Room type not available on selected days", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnChoose.Text = "Choose";
@@ -68,19 +84,16 @@ namespace HotelMgmtSystem
             }
             dbconnect dbms = new dbconnect();
             dbms.connect();
-            OracleCommand cmd = new OracleCommand("INSERT INTO RESERVATION (NO_OF_GUESTS, CHECK_IN, CHECK_OUT, CUST_ID, ROOM_TYPE) VALUES (:p1, :p2, :p3, :p4, :p5)", dbms.con);
+            OracleCommand cmd = new OracleCommand("UPDATE RESERVATION SET NO_OF_GUESTS= :p1, CHECK_IN= :p2, CHECK_OUT= :p3, ROOM_TYPE= :p4 WHERE RESERVATION_ID= :p5", dbms.con);
             cmd.Parameters.Add("p1", noOfGuests.Text);
             cmd.Parameters.Add("p2", checkInDate.Value.Date);
             cmd.Parameters.Add("p3", checkOutDate.Value.Date);
-            cmd.Parameters.Add("p4", custId.Text);
-            cmd.Parameters.Add("p5", btnChoose.Text);
+            cmd.Parameters.Add("p4", btnChoose.Text);
+            cmd.Parameters.Add("p5", resId.Text);
             try
             {
                 cmd.ExecuteNonQuery();
-                cmd = new OracleCommand("SELECT RESERVATION_ID_SEQ.CURRVAL FROM DUAL", dbms.con);
-                OracleDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                MessageBox.Show("Reservation created successfully ID:" + reader[0].ToString(), "Success");
+                MessageBox.Show("Reservation successfully modified ID:" + resId.Text, "Success");
                 ((Form)this.TopLevelControl).Close();
             }
             catch (Exception exp)
@@ -89,13 +102,12 @@ namespace HotelMgmtSystem
             }
         }
 
-        private void btnChoose_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            roomChooseForm newForm = new roomChooseForm();
-            newForm.ShowDialog();
-            btnChoose.Text = newForm.roomChoiceId;
-            btnChoose.Enabled = false;
-            roomSize = Convert.ToInt32(newForm.roomBeds);
+            dbconnect dbms = new dbconnect();
+            dbms.connect();
+            OracleCommand cmd = new OracleCommand("DELETE FROM RESERVATION WHERE RESERVATION_ID=:p1", dbms.con);
+            cmd.Parameters.Add("p1", resId.Text);
         }
 
         private bool checkAvailability()
@@ -112,10 +124,11 @@ namespace HotelMgmtSystem
 
             for (DateTime date = checkInDate.Value; date <= checkOutDate.Value; date = date.AddDays(1))
             {
-                cmd = new OracleCommand("SELECT COUNT(*) FROM RESERVATION WHERE ROOM_TYPE=:p1 AND CHECK_IN<=:p2 AND CHECK_OUT>=:p2", dbms.con);
+                cmd = new OracleCommand("SELECT COUNT(*) FROM RESERVATION WHERE ROOM_TYPE=:p1 AND CHECK_IN<=:p2 AND CHECK_OUT>=:p2 AND RESERVATION_ID!= :p3", dbms.con);
                 cmd.Parameters.Add("p1", btnChoose.Text);
                 cmd.Parameters.Add("p2", date.Date);
                 cmd.Parameters.Add("p2", date.Date);
+                cmd.Parameters.Add("p3", resId.Text);
                 reader = cmd.ExecuteReader();
                 reader.Read();
                 booked = Convert.ToInt32(reader["COUNT(*)"].ToString());
@@ -126,6 +139,5 @@ namespace HotelMgmtSystem
             }
             return true;
         }
-
     }
 }

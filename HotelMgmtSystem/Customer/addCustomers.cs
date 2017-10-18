@@ -32,7 +32,10 @@ namespace HotelMgmtSystem
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer added successfully", "Success");
+                cmd = new OracleCommand("SELECT CUST_ID_SEQ.CURRVAL FROM DUAL", dbms.con);
+                OracleDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                MessageBox.Show("Customer added successfully ID:" + reader[0].ToString(), "Success");
                 ((Form)this.TopLevelControl).Close();
             }
             catch(Exception exp)
