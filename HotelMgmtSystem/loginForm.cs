@@ -19,8 +19,10 @@ namespace HotelMgmtSystem
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            btnLogin.Enabled = false;
+            btnLogin.Text = "Loading";
             dbconnect dbms = new dbconnect();
             OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
             cmd.Parameters.Add("p1", user.Text);
@@ -41,7 +43,11 @@ namespace HotelMgmtSystem
                 this.Close();
             }
             else
+            {
                 MessageBox.Show("Username/Password invalid");
+                btnLogin.Enabled = true;
+                btnLogin.Text = "Login";
+            }
         }
     }
 }

@@ -104,6 +104,7 @@
             this.btnRooms.TabIndex = 6;
             this.btnRooms.Text = "Rooms";
             this.btnRooms.UseVisualStyleBackColor = true;
+            this.btnRooms.Click += new System.EventHandler(this.btnRooms_Click);
             // 
             // btnEmployees
             // 

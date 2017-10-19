@@ -35,6 +35,10 @@ namespace HotelMgmtSystem
             newForm.Show();
         }
 
-
+        private void btnRooms_Click(object sender, EventArgs e)
+        {
+            roomForm newForm = new roomForm();
+            newForm.Show();
+        }
     }
 }

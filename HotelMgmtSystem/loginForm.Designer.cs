@@ -32,7 +32,7 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.user = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
-            this.Login = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Label1
@@ -67,22 +67,22 @@
             this.pass.Size = new System.Drawing.Size(100, 20);
             this.pass.TabIndex = 3;
             // 
-            // Login
+            // btnLogin
             // 
-            this.Login.Location = new System.Drawing.Point(116, 152);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(75, 23);
-            this.Login.TabIndex = 4;
-            this.Login.Text = "Login";
-            this.Login.UseVisualStyleBackColor = true;
-            this.Login.Click += new System.EventHandler(this.Login_Click);
+            this.btnLogin.Location = new System.Drawing.Point(116, 152);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.Login);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.user);
             this.Controls.Add(this.Label2);
@@ -100,7 +100,7 @@
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.TextBox user;
         private System.Windows.Forms.TextBox pass;
-        private System.Windows.Forms.Button Login;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

@@ -70,6 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Room\modifyRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Room\modifyRoom.Designer.cs">
+      <DependentUpon>modifyRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Room\addRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Room\addRoom.Designer.cs">
+      <DependentUpon>addRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\addCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +140,12 @@
     <Compile Include="Reservation\roomChooseForm.Designer.cs">
       <DependentUpon>roomChooseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Room\roomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Room\roomForm.Designer.cs">
+      <DependentUpon>roomForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customer\addCustomers.resx">
       <DependentUpon>addCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +181,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reservation\roomChooseForm.resx">
       <DependentUpon>roomChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\addRoom.resx">
+      <DependentUpon>addRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\modifyRoom.resx">
+      <DependentUpon>modifyRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\roomForm.resx">
+      <DependentUpon>roomForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
