@@ -259,6 +259,7 @@
             this.Controls.Add(this.label1);
             this.Name = "receipt";
             this.Size = new System.Drawing.Size(602, 380);
+            this.Load += new System.EventHandler(this.receipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

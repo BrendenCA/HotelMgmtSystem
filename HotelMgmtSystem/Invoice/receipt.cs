@@ -32,7 +32,7 @@ namespace HotelMgmtSystem
             reader.Read();
             days = Convert.ToDateTime(reader["CHECK_OUT"].ToString()) - Convert.ToDateTime(reader["CHECK_IN"].ToString());
             dataGridView.Rows.Add(reader["ROOM_DESC"].ToString() + " x" + days.TotalDays, "₹" + reader["PRICE"].ToString());
-            amt += Convert.ToInt32(reader["PRICE"]);
+            amt += Convert.ToInt32(reader["PRICE"]) * days.TotalDays;
 
             cmd = new OracleCommand("SELECT i.ITEM_NAME, i.ITEM_PRICE FROM ORDERS o INNER JOIN ITEMS i ON o.ITEM_ID=i.ITEM_ID WHERE o.RESERVATION_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", resId.Text);
@@ -86,6 +86,11 @@ namespace HotelMgmtSystem
                 invoiceStatus.Text = "Paid";
                 btnPay.Visible = false;
             }
+        }
+
+        private void receipt_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
