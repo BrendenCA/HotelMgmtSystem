@@ -76,6 +76,17 @@ namespace HotelMgmtSystem
             if (invoiceStatus.Text != "Paid")
                 btnPay.Visible = true;
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            transactionForm newForm = new transactionForm();
+            newForm.ShowDialog();
+            if (newForm.transSuccess)
+            {
+                invoiceStatus.Text = "Paid";
+                btnPay.Visible = false;
+            }
+        }
     }
 
 }
