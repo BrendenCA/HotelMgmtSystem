@@ -64,5 +64,11 @@ namespace HotelMgmtSystem
             employeeForm newForm = new employeeForm();
             newForm.Show();
         }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            statsForm newForm = new statsForm();
+            newForm.Show();
+        }
     }
 }

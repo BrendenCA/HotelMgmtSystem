@@ -127,6 +127,7 @@
             this.btnStats.TabIndex = 8;
             this.btnStats.Text = "View Stats";
             this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // label3
             // 
