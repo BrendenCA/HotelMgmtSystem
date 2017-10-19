@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Invoice\invoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice\invoiceForm.Designer.cs">
+      <DependentUpon>invoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\modifyOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Order\orderForm.Designer.cs">
       <DependentUpon>orderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoice\receipt.Designer.cs">
+      <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="Room\modifyRoom.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +200,21 @@
     <Compile Include="Room\roomForm.Designer.cs">
       <DependentUpon>roomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoice\transactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice\transactionForm.Designer.cs">
+      <DependentUpon>transactionForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Invoice\invoiceForm.resx">
+      <DependentUpon>invoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice\receipt.resx">
+      <DependentUpon>receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice\transactionForm.resx">
+      <DependentUpon>transactionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Item\addItem.resx">
       <DependentUpon>addItem.cs</DependentUpon>
     </EmbeddedResource>

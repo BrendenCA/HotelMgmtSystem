@@ -52,5 +52,11 @@ namespace HotelMgmtSystem
             orderForm newForm = new orderForm();
             newForm.Show();
         }
+
+        private void btnInvoices_Click(object sender, EventArgs e)
+        {
+            invoiceForm newForm = new invoiceForm();
+            newForm.Show();
+        }
     }
 }
