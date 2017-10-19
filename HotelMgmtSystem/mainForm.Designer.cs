@@ -96,6 +96,7 @@
             this.btnOrders.TabIndex = 5;
             this.btnOrders.Text = "Room Service";
             this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnRooms
             // 

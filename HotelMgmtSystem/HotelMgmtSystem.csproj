@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Order\modifyOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\modifyOrder.Designer.cs">
+      <DependentUpon>modifyOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\itemChooseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\itemChooseForm.Designer.cs">
+      <DependentUpon>itemChooseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\addOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\addOrder.Designer.cs">
+      <DependentUpon>addOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Item\addItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +105,12 @@
     </Compile>
     <Compile Include="Item\modifyItem.Designer.cs">
       <DependentUpon>modifyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\orderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\orderForm.Designer.cs">
+      <DependentUpon>orderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Room\modifyRoom.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +212,18 @@
     <EmbeddedResource Include="Customer\modifyCustomers.resx">
       <DependentUpon>modifyCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Order\addOrder.resx">
+      <DependentUpon>addOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\itemChooseForm.resx">
+      <DependentUpon>itemChooseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\modifyOrder.resx">
+      <DependentUpon>modifyOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\orderForm.resx">
+      <DependentUpon>orderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -249,9 +285,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Order\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
