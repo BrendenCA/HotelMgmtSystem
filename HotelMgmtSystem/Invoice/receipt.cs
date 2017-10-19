@@ -13,6 +13,7 @@ namespace HotelMgmtSystem
 {
     public partial class receipt : UserControl
     {
+        private double amt = 0;
         public receipt()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace HotelMgmtSystem
             btnPay.Visible = false;
             dbconnect dbms = new dbconnect();
             TimeSpan days;
-            double amt = 0;
             OracleCommand cmd = new OracleCommand("SELECT rt.ROOM_DESC, rt.PRICE, r.CHECK_IN, r.CHECK_OUT FROM RESERVATION r INNER JOIN ROOM_TYPE rt ON r.ROOM_TYPE=rt.ROOM_TYPE WHERE RESERVATION_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", resId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
@@ -79,7 +79,7 @@ namespace HotelMgmtSystem
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            transactionForm newForm = new transactionForm();
+            transactionForm newForm = new transactionForm(amt);
             newForm.ShowDialog();
             if (newForm.transSuccess)
             {

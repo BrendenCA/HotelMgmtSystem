@@ -36,17 +36,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdVisa = new System.Windows.Forms.RadioButton();
-            this.rdMaster = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.rbCard = new System.Windows.Forms.RadioButton();
+            this.rbCash = new System.Windows.Forms.RadioButton();
+            this.paymentMethod = new System.Windows.Forms.GroupBox();
+            this.rbVisa = new System.Windows.Forms.RadioButton();
+            this.rbMaster = new System.Windows.Forms.RadioButton();
+            this.cardType = new System.Windows.Forms.GroupBox();
+            this.cardNo = new System.Windows.Forms.TextBox();
+            this.cardName = new System.Windows.Forms.TextBox();
+            this.cardExpDate = new System.Windows.Forms.DateTimePicker();
+            this.cardCvv = new System.Windows.Forms.TextBox();
             this.transAmt = new System.Windows.Forms.Label();
+            this.paymentMethod.SuspendLayout();
+            this.cardType.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -120,96 +122,103 @@
             this.btnPay.TabIndex = 7;
             this.btnPay.Text = "Pay Now";
             this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // radioButton1
+            // rbCard
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(123, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Card";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbCard.AutoSize = true;
+            this.rbCard.Checked = true;
+            this.rbCard.Location = new System.Drawing.Point(15, 9);
+            this.rbCard.Name = "rbCard";
+            this.rbCard.Size = new System.Drawing.Size(47, 17);
+            this.rbCard.TabIndex = 11;
+            this.rbCard.TabStop = true;
+            this.rbCard.Text = "Card";
+            this.rbCard.UseVisualStyleBackColor = true;
+            this.rbCard.CheckedChanged += new System.EventHandler(this.rbCard_CheckedChanged);
             // 
-            // radioButton2
+            // rbCash
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(195, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 17);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Cash";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCash.AutoSize = true;
+            this.rbCash.Location = new System.Drawing.Point(86, 9);
+            this.rbCash.Name = "rbCash";
+            this.rbCash.Size = new System.Drawing.Size(49, 17);
+            this.rbCash.TabIndex = 12;
+            this.rbCash.Text = "Cash";
+            this.rbCash.UseVisualStyleBackColor = true;
+            this.rbCash.CheckedChanged += new System.EventHandler(this.rbCash_CheckedChanged);
             // 
-            // groupBox1
+            // paymentMethod
             // 
-            this.groupBox1.Location = new System.Drawing.Point(108, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(166, 28);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
+            this.paymentMethod.Controls.Add(this.rbCash);
+            this.paymentMethod.Controls.Add(this.rbCard);
+            this.paymentMethod.Location = new System.Drawing.Point(108, 12);
+            this.paymentMethod.Name = "paymentMethod";
+            this.paymentMethod.Size = new System.Drawing.Size(166, 28);
+            this.paymentMethod.TabIndex = 13;
+            this.paymentMethod.TabStop = false;
             // 
-            // rdVisa
+            // rbVisa
             // 
-            this.rdVisa.AutoSize = true;
-            this.rdVisa.Location = new System.Drawing.Point(123, 52);
-            this.rdVisa.Name = "rdVisa";
-            this.rdVisa.Size = new System.Drawing.Size(45, 17);
-            this.rdVisa.TabIndex = 14;
-            this.rdVisa.TabStop = true;
-            this.rdVisa.Text = "Visa";
-            this.rdVisa.UseVisualStyleBackColor = true;
+            this.rbVisa.AutoSize = true;
+            this.rbVisa.Checked = true;
+            this.rbVisa.Location = new System.Drawing.Point(15, 8);
+            this.rbVisa.Name = "rbVisa";
+            this.rbVisa.Size = new System.Drawing.Size(45, 17);
+            this.rbVisa.TabIndex = 14;
+            this.rbVisa.TabStop = true;
+            this.rbVisa.Text = "Visa";
+            this.rbVisa.UseVisualStyleBackColor = true;
             // 
-            // rdMaster
+            // rbMaster
             // 
-            this.rdMaster.AutoSize = true;
-            this.rdMaster.Location = new System.Drawing.Point(193, 52);
-            this.rdMaster.Name = "rdMaster";
-            this.rdMaster.Size = new System.Drawing.Size(79, 17);
-            this.rdMaster.TabIndex = 15;
-            this.rdMaster.TabStop = true;
-            this.rdMaster.Text = "MasterCard";
-            this.rdMaster.UseVisualStyleBackColor = true;
+            this.rbMaster.AutoSize = true;
+            this.rbMaster.Location = new System.Drawing.Point(86, 8);
+            this.rbMaster.Name = "rbMaster";
+            this.rbMaster.Size = new System.Drawing.Size(79, 17);
+            this.rbMaster.TabIndex = 15;
+            this.rbMaster.Text = "MasterCard";
+            this.rbMaster.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // cardType
             // 
-            this.groupBox2.Location = new System.Drawing.Point(108, 44);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 28);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
+            this.cardType.Controls.Add(this.rbVisa);
+            this.cardType.Controls.Add(this.rbMaster);
+            this.cardType.Location = new System.Drawing.Point(108, 44);
+            this.cardType.Name = "cardType";
+            this.cardType.Size = new System.Drawing.Size(166, 28);
+            this.cardType.TabIndex = 16;
+            this.cardType.TabStop = false;
             // 
-            // textBox1
+            // cardNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 20);
-            this.textBox1.TabIndex = 17;
+            this.cardNo.Location = new System.Drawing.Point(108, 88);
+            this.cardNo.Name = "cardNo";
+            this.cardNo.Size = new System.Drawing.Size(166, 20);
+            this.cardNo.TabIndex = 17;
             // 
-            // textBox2
+            // cardName
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 18;
+            this.cardName.Location = new System.Drawing.Point(108, 116);
+            this.cardName.Name = "cardName";
+            this.cardName.Size = new System.Drawing.Size(167, 20);
+            this.cardName.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // cardExpDate
             // 
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 147);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(61, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.cardExpDate.CustomFormat = "MM/yyyy";
+            this.cardExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.cardExpDate.Location = new System.Drawing.Point(109, 147);
+            this.cardExpDate.Name = "cardExpDate";
+            this.cardExpDate.Size = new System.Drawing.Size(61, 20);
+            this.cardExpDate.TabIndex = 19;
             // 
-            // textBox3
+            // cardCvv
             // 
-            this.textBox3.Location = new System.Drawing.Point(230, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(45, 20);
-            this.textBox3.TabIndex = 20;
+            this.cardCvv.Location = new System.Drawing.Point(230, 147);
+            this.cardCvv.Name = "cardCvv";
+            this.cardCvv.Size = new System.Drawing.Size(45, 20);
+            this.cardCvv.TabIndex = 20;
             // 
             // transAmt
             // 
@@ -226,14 +235,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 224);
             this.Controls.Add(this.transAmt);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.rdMaster);
-            this.Controls.Add(this.rdVisa);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.cardCvv);
+            this.Controls.Add(this.cardExpDate);
+            this.Controls.Add(this.cardName);
+            this.Controls.Add(this.cardNo);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -242,10 +247,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.paymentMethod);
+            this.Controls.Add(this.cardType);
             this.Name = "transactionForm";
             this.Text = "Payment";
+            this.paymentMethod.ResumeLayout(false);
+            this.paymentMethod.PerformLayout();
+            this.cardType.ResumeLayout(false);
+            this.cardType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,16 +270,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdVisa;
-        private System.Windows.Forms.RadioButton rdMaster;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton rbCard;
+        private System.Windows.Forms.RadioButton rbCash;
+        private System.Windows.Forms.GroupBox paymentMethod;
+        private System.Windows.Forms.RadioButton rbVisa;
+        private System.Windows.Forms.RadioButton rbMaster;
+        private System.Windows.Forms.GroupBox cardType;
+        private System.Windows.Forms.TextBox cardNo;
+        private System.Windows.Forms.TextBox cardName;
+        private System.Windows.Forms.DateTimePicker cardExpDate;
+        private System.Windows.Forms.TextBox cardCvv;
         private System.Windows.Forms.Label transAmt;
     }
 }
