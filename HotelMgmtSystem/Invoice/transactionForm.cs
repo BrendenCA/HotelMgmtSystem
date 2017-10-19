@@ -31,6 +31,7 @@ namespace HotelMgmtSystem
         {
             if (rbCash.Checked == true)
             {
+                panel1.Show();
                 cardType.Enabled = false;
                 cardNo.Enabled = false;
                 cardExpDate.Enabled = false;
@@ -42,6 +43,7 @@ namespace HotelMgmtSystem
         {
             if (rbCard.Checked == true)
             {
+                panel1.Hide();
                 cardType.Enabled = true;
                 cardNo.Enabled = true;
                 cardExpDate.Enabled = true;
@@ -63,7 +65,7 @@ namespace HotelMgmtSystem
                     MessageBox.Show("Enter valid name on card", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (cardExpDate.Value > DateTime.Now)
+                if (cardExpDate.Value <= DateTime.Now)
                 {
                     MessageBox.Show("Card expired", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -100,6 +102,11 @@ namespace HotelMgmtSystem
                     MessageBox.Show("Payment not successful\n" + exp.Message, "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void transactionForm_Load(object sender, EventArgs e)
+        {
+            panel1.Hide();
         }
     }
 }

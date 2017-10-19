@@ -47,6 +47,7 @@
             this.cardExpDate = new System.Windows.Forms.DateTimePicker();
             this.cardCvv = new System.Windows.Forms.TextBox();
             this.transAmt = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.paymentMethod.SuspendLayout();
             this.cardType.SuspendLayout();
             this.SuspendLayout();
@@ -229,11 +230,19 @@
             this.transAmt.TabIndex = 21;
             this.transAmt.Text = "<$100>";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(282, 126);
+            this.panel1.TabIndex = 22;
+            // 
             // transactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 224);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.transAmt);
             this.Controls.Add(this.cardCvv);
             this.Controls.Add(this.cardExpDate);
@@ -251,6 +260,7 @@
             this.Controls.Add(this.cardType);
             this.Name = "transactionForm";
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.transactionForm_Load);
             this.paymentMethod.ResumeLayout(false);
             this.paymentMethod.PerformLayout();
             this.cardType.ResumeLayout(false);
@@ -281,5 +291,6 @@
         private System.Windows.Forms.DateTimePicker cardExpDate;
         private System.Windows.Forms.TextBox cardCvv;
         private System.Windows.Forms.Label transAmt;
+        private System.Windows.Forms.Panel panel1;
     }
 }
