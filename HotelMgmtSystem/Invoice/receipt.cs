@@ -31,7 +31,7 @@ namespace HotelMgmtSystem
             OracleDataReader reader = cmd.ExecuteReader();
             reader.Read();
             days = Convert.ToDateTime(reader["CHECK_OUT"].ToString()) - Convert.ToDateTime(reader["CHECK_IN"].ToString());
-            dataGridView.Rows.Add(reader["ROOM_DESC"].ToString() + " x" + days.TotalDays, reader["PRICE"].ToString());
+            dataGridView.Rows.Add(reader["ROOM_DESC"].ToString() + " x" + days.TotalDays, "₹" + reader["PRICE"].ToString());
             amt += Convert.ToInt32(reader["PRICE"]);
 
             cmd = new OracleCommand("SELECT i.ITEM_NAME, i.ITEM_PRICE FROM ORDERS o INNER JOIN ITEMS i ON o.ITEM_ID=i.ITEM_ID WHERE o.RESERVATION_ID=:p1", dbms.con);
@@ -39,7 +39,7 @@ namespace HotelMgmtSystem
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                dataGridView.Rows.Add(reader["ITEM_NAME"].ToString(), reader["ITEM_PRICE"].ToString());
+                dataGridView.Rows.Add(reader["ITEM_NAME"].ToString(), "₹" + reader["ITEM_PRICE"].ToString());
                 amt += Convert.ToInt32(reader["ITEM_PRICE"]);
             }
             date.Text = DateTime.Now.ToShortDateString();

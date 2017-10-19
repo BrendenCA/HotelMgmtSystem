@@ -66,8 +66,8 @@ namespace HotelMgmtSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            OracleCommand cmd = new OracleCommand("DELETE FROM ORDERS WHERE ORDER_ID=:p2", dbms.con);
-            cmd.Parameters.Add("p1", btnChoose.Text);
+            OracleCommand cmd = new OracleCommand("DELETE FROM ORDERS WHERE ORDER_ID=:p1", dbms.con);
+            cmd.Parameters.Add("p1", orderId.Text);
             try
             {
                 cmd.ExecuteNonQuery();

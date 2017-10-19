@@ -70,11 +70,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee\addEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\employeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\employeeForm.Designer.cs">
+      <DependentUpon>employeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice\invoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Invoice\invoiceForm.Designer.cs">
       <DependentUpon>invoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\modifyEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employee\modifyEmployee.Designer.cs">
+      <DependentUpon>modifyEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\modifyOrder.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +224,12 @@
     <Compile Include="Invoice\transactionForm.Designer.cs">
       <DependentUpon>transactionForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Employee\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\employeeForm.resx">
+      <DependentUpon>employeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoice\invoiceForm.resx">
       <DependentUpon>invoiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\modifyCustomers.resx">
       <DependentUpon>modifyCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\modifyEmployee.resx">
+      <DependentUpon>modifyEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\addOrder.resx">
       <DependentUpon>addOrder.cs</DependentUpon>

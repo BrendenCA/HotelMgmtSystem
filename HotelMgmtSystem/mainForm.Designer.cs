@@ -117,6 +117,7 @@
             this.btnEmployees.TabIndex = 7;
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.UseVisualStyleBackColor = true;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnStats
             // 
