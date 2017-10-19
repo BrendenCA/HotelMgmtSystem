@@ -38,6 +38,7 @@
             this.btnEmployees = new System.Windows.Forms.Button();
             this.btnStats = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnItems = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // welcomeText
@@ -80,7 +81,7 @@
             // 
             // btnInvoices
             // 
-            this.btnInvoices.Location = new System.Drawing.Point(66, 175);
+            this.btnInvoices.Location = new System.Drawing.Point(66, 204);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.Size = new System.Drawing.Size(100, 23);
             this.btnInvoices.TabIndex = 4;
@@ -89,11 +90,11 @@
             // 
             // btnOrders
             // 
-            this.btnOrders.Location = new System.Drawing.Point(66, 146);
+            this.btnOrders.Location = new System.Drawing.Point(66, 175);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(100, 23);
             this.btnOrders.TabIndex = 5;
-            this.btnOrders.Text = "Orders";
+            this.btnOrders.Text = "Room Service";
             this.btnOrders.UseVisualStyleBackColor = true;
             // 
             // btnRooms
@@ -108,7 +109,7 @@
             // 
             // btnEmployees
             // 
-            this.btnEmployees.Location = new System.Drawing.Point(66, 204);
+            this.btnEmployees.Location = new System.Drawing.Point(66, 233);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(100, 23);
             this.btnEmployees.TabIndex = 7;
@@ -117,7 +118,7 @@
             // 
             // btnStats
             // 
-            this.btnStats.Location = new System.Drawing.Point(66, 233);
+            this.btnStats.Location = new System.Drawing.Point(66, 262);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(100, 23);
             this.btnStats.TabIndex = 8;
@@ -134,11 +135,21 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Manage";
             // 
+            // btnItems
+            // 
+            this.btnItems.Location = new System.Drawing.Point(66, 146);
+            this.btnItems.Name = "btnItems";
+            this.btnItems.Size = new System.Drawing.Size(100, 23);
+            this.btnItems.TabIndex = 10;
+            this.btnItems.Text = "Menu items";
+            this.btnItems.UseVisualStyleBackColor = true;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 275);
+            this.ClientSize = new System.Drawing.Size(229, 293);
+            this.Controls.Add(this.btnItems);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnStats);
             this.Controls.Add(this.btnEmployees);
@@ -169,5 +180,6 @@
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnStats;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnItems;
     }
 }
