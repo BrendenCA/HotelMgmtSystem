@@ -105,6 +105,16 @@ namespace HotelMgmtSystem
             dbconnect dbms = new dbconnect();
             OracleCommand cmd = new OracleCommand("DELETE FROM RESERVATION WHERE RESERVATION_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", resId.Text);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Reservation successfully deleted", "Success");
+                ((Form)this.TopLevelControl).Close();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Reservation not deleted\n" + exp.Message, "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool checkAvailability()
