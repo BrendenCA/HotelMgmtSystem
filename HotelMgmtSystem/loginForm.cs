@@ -24,20 +24,20 @@ namespace HotelMgmtSystem
             btnLogin.Enabled = false;
             btnLogin.Text = "Loading";
             dbconnect dbms = new dbconnect();
-            OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
+            OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM EMP_LOGIN WHERE USER_ID= :p1 AND PASSWORD= :p2", dbms.con);
             cmd.Parameters.Add("p1", user.Text);
             cmd.Parameters.Add("p2", pass.Text);
             OracleDataReader reader = cmd.ExecuteReader();
             reader.Read();
             if (reader["COUNT(*)"].ToString() == "1")
             {
-                cmd = new OracleCommand("SELECT USERID, ROLE FROM EMP_LOGIN WHERE USERID= :p1 AND PASSWORD= :p2", dbms.con);
+                cmd = new OracleCommand("SELECT USER_ID, ROLE FROM EMP_LOGIN WHERE USER_ID= :p1 AND PASSWORD= :p2", dbms.con);
                 cmd.Parameters.Add("p1", user.Text);
                 cmd.Parameters.Add("p2", pass.Text);
                 reader = cmd.ExecuteReader();
                 reader.Read();
                 globalVar.loginStatus = true;
-                globalVar.userid = reader["USERID"].ToString();
+                globalVar.userid = reader["USER_ID"].ToString();
                 globalVar.role = reader["ROLE"].ToString();
                 MessageBox.Show("User " + globalVar.userid + " logged in as " + globalVar.role, "Success");
                 this.Close();

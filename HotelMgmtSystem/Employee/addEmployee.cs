@@ -22,8 +22,7 @@ namespace HotelMgmtSystem
         {
             string empId;
             dbconnect dbms = new dbconnect();
-            //remove fname lname make it name remove designation, emailid, lastchanged
-            OracleCommand cmd = new OracleCommand("INSERT INTO EMPLOYEE (NAME, ADDRESS, AADHAR_NO, MOBILE_NO, USER_ID, SALARY) VALUES (:p1, :p2, :p3, :p4, :p5, :p6)", dbms.con);
+            OracleCommand cmd = new OracleCommand("INSERT INTO EMPLOYEES (NAME, ADDRESS, AADHAR_NO, MOBILE_NO, USER_ID, SALARY) VALUES (:p1, :p2, :p3, :p4, :p5, :p6)", dbms.con);
             cmd.Parameters.Add("p1", name.Text);
             cmd.Parameters.Add("p2", address.Text);
             cmd.Parameters.Add("p3", aadharNo.Text);

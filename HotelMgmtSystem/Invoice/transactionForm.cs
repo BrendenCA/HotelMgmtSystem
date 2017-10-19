@@ -74,7 +74,7 @@ namespace HotelMgmtSystem
                     return;
                 }
                 dbconnect dbms = new dbconnect();
-                OracleCommand cmd = new OracleCommand("INSERT INTO TRANSACTION (PAYMENT_METHOD, CARD_TYPE, CARD_NO, CARD_NAME, CARD_EXP, CARD_CVV) values (:p1, :p2, :p3, :p4, :p5, :p6)", dbms.con);
+                OracleCommand cmd = new OracleCommand("INSERT INTO TRANSACTION (PAYMENT_METHOD, CARD_TYPE, CARD_NO, CARD_NAME, CARD_EXP, CARD_CVV, PAYMENT_DATE) values (:p1, :p2, :p3, :p4, :p5, :p6, :p7)", dbms.con);
                 cmd.Parameters.Add("p1", rbCard.Text);
                 if(rbVisa.Checked)
                     cmd.Parameters.Add("p2", rbVisa.Text);
@@ -84,6 +84,7 @@ namespace HotelMgmtSystem
                 cmd.Parameters.Add("p4", cardName.Text);
                 cmd.Parameters.Add("p5", cardExpDate.Value.Date);
                 cmd.Parameters.Add("p6", cardCvv.Text);
+                cmd.Parameters.Add("p7", DateTime.Now.Date);
                 try
                 {
                     cmd.ExecuteNonQuery();

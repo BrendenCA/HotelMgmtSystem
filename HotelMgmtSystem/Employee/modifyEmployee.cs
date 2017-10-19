@@ -21,7 +21,7 @@ namespace HotelMgmtSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            OracleCommand cmd = new OracleCommand("SELECT * FROM EMPLOYEE WHERE EMP_ID=:p1", dbms.con);
+            OracleCommand cmd = new OracleCommand("SELECT * FROM EMPLOYEES WHERE EMP_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", empId.Text);
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
@@ -45,7 +45,7 @@ namespace HotelMgmtSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            OracleCommand cmd = new OracleCommand("UPDATE EMPLOYEE SET NAME=:p1, ADDRESS=:p2, AADHAR_NO=:p3, MOBILE_NO=:p4, USER_ID=:p5, SALARY=:p6 WHERE EMP_ID=:p7", dbms.con);
+            OracleCommand cmd = new OracleCommand("UPDATE EMPLOYEES SET NAME=:p1, ADDRESS=:p2, AADHAR_NO=:p3, MOBILE_NO=:p4, USER_ID=:p5, SALARY=:p6 WHERE EMP_ID=:p7", dbms.con);
             cmd.Parameters.Add("p1", name.Text);
             cmd.Parameters.Add("p2", address.Text);
             cmd.Parameters.Add("p3", aadharNo.Text);
@@ -74,7 +74,7 @@ namespace HotelMgmtSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             dbconnect dbms = new dbconnect();
-            OracleCommand cmd = new OracleCommand("DELETE FROM EMPLOYEE WHERE EMP_ID=:p1", dbms.con);
+            OracleCommand cmd = new OracleCommand("DELETE FROM EMPLOYEES WHERE EMP_ID=:p1", dbms.con);
             cmd.Parameters.Add("p1", empId.Text);
             try
             {

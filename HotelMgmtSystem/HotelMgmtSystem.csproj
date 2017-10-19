@@ -224,10 +224,10 @@
     <Compile Include="Invoice\transactionForm.Designer.cs">
       <DependentUpon>transactionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="statsForm.cs">
+    <Compile Include="Stats\statsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="statsForm.Designer.cs">
+    <Compile Include="Stats\statsForm.Designer.cs">
       <DependentUpon>statsForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Employee\addEmployee.resx">
@@ -314,7 +314,7 @@
     <EmbeddedResource Include="Room\roomForm.resx">
       <DependentUpon>roomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="statsForm.resx">
+    <EmbeddedResource Include="Stats\statsForm.resx">
       <DependentUpon>statsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -345,9 +345,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stats\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
