@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item\addItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\addItem.Designer.cs">
+      <DependentUpon>addItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\itemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\itemForm.Designer.cs">
+      <DependentUpon>itemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\modifyItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\modifyItem.Designer.cs">
+      <DependentUpon>modifyItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Room\modifyRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,11 +164,20 @@
     <Compile Include="Room\roomForm.Designer.cs">
       <DependentUpon>roomForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Item\addItem.resx">
+      <DependentUpon>addItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\addCustomers.resx">
       <DependentUpon>addCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\itemForm.resx">
+      <DependentUpon>itemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\modifyItem.resx">
+      <DependentUpon>modifyItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>

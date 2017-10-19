@@ -143,6 +143,7 @@
             this.btnItems.TabIndex = 10;
             this.btnItems.Text = "Menu items";
             this.btnItems.UseVisualStyleBackColor = true;
+            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
             // 
             // mainForm
             // 
