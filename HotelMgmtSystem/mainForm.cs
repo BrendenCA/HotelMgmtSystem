@@ -21,6 +21,14 @@ namespace HotelMgmtSystem
         {
             welcomeText.Text = "Welcome " + globalVar.userid;
             roleText.Text = "Role: " + globalVar.role;
+            if (globalVar.role == "staff")
+            {
+                btnStats.Hide();
+                btnStats2.Hide();
+                btnEmployees.Hide();
+                btnEmployees2.Hide();
+            }
+            this.Refresh();
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)

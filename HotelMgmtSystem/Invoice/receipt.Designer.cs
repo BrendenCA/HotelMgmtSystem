@@ -133,12 +133,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(193, 4);
+            this.label9.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(174, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(210, 39);
+            this.label9.Size = new System.Drawing.Size(241, 43);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Hotel Name";
+            this.label9.Text = "Baywatch Villas";
             // 
             // label10
             // 

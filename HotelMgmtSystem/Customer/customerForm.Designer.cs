@@ -70,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(236, 45);
             this.Controls.Add(this.panel);
             this.Name = "customerForm";
-            this.Text = "Manage Customers";
+            this.Text = "Customers";
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
 

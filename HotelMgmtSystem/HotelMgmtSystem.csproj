@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -142,6 +145,11 @@
     </Compile>
     <Compile Include="Invoice\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Room\modifyRoom.cs">
       <SubType>UserControl</SubType>
@@ -287,13 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Reservation\addReservation.resx">
       <DependentUpon>addReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,7 +350,22 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\password.ico" />
+    <None Include="Resources\username.png" />
+    <None Include="Resources\service.png" />
+    <None Include="Resources\stats.png" />
+    <None Include="Resources\food.jpg" />
+    <None Include="Resources\invoice.jpg" />
+    <None Include="Resources\employees.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\rooms.png" />
+    <None Include="Resources\customers.png" />
+    <None Include="Resources\reservation.png" />
+    <None Include="Resources\customers.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
