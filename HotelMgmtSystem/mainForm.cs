@@ -21,7 +21,7 @@ namespace HotelMgmtSystem
         {
             welcomeText.Text = "Welcome " + globalVar.userid;
             roleText.Text = "Role: " + globalVar.role;
-            if (globalVar.role == "staff")
+            if (!globalVar.role.Equals("admin", StringComparison.CurrentCultureIgnoreCase))
             {
                 btnStats.Hide();
                 btnStats2.Hide();
@@ -36,7 +36,7 @@ namespace HotelMgmtSystem
             customerForm newForm = new customerForm();
             newForm.Show();
         }
-        
+
         private void btnReservations_Click(object sender, EventArgs e)
         {
             reservationForm newForm = new reservationForm();
