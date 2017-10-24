@@ -21,6 +21,12 @@ namespace HotelMgmtSystem
         {
             welcomeText.Text = "Welcome " + globalVar.userid;
             roleText.Text = "Role: " + globalVar.role;
+            if (globalVar.role != "Admin")
+            {
+                btnStats.Visible = false;
+                btnEmployees.Visible = false;
+                //also hide corresponding icons
+            }
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
