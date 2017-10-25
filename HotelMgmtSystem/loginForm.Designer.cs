@@ -49,7 +49,6 @@
             this.Label1.Size = new System.Drawing.Size(71, 18);
             this.Label1.TabIndex = 0;
             this.Label1.Text = "Username";
-            this.Label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Label2
             // 
